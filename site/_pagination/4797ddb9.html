@@ -1,0 +1,25 @@
+---js
+{
+  pagination: {
+  data: "collections.4797ddb9_paged",
+  size: 1,
+  alias: "c",
+  },
+  permalink: "{{ c.permalink }}"
+}  
+---
+{%- capture items -%}
+{%- for item in c.items -%}
+<div role="listitem" class="w-dyn-item w-col w-col-4">
+          <a href="{{ item.url }}" class="w-inline-block">
+            <h1>Heading</h1>
+          </a>
+        </div>
+{%- endfor -%}
+{%- endcapture -%}
+{
+  "items": {{ items | json }},
+   "length": "{{ c.items.length }}",
+   "next": "{{c.next }}",
+   "prev": "{{c.prev}}"
+}

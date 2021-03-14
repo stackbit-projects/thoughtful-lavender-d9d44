@@ -1,0 +1,310 @@
+backend:
+  name: "git-gateway"
+  accept_roles:
+    - "admin"
+    - "editor"
+media_folder: "static/images"
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "site/pages"
+    identifier_field: "title"
+    extension: "md"
+    create: false
+    delete: false
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Layout"
+        widget: "hidden"
+        name: "layout"
+        default: "{{slug}}.html"
+      - label: "Seo"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+          - label: "Open Graph Image"
+            name: "og:image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Twitter Card"
+            name: "twitter:card"
+            widget: "string"
+            default: "summary"
+            required: false
+          - label: "Twitter Site"
+            name: "twitter:site"
+            widget: "string"
+            required: false
+          - label: "Twitter Creator"
+            name: "twitter:creator"
+            widget: "string"
+            required: false
+          - label: "Additional HTML tags"
+            name: "additional_tags"
+            widget: "text"
+            required: false
+  - name: "art_il_print"
+    label: "Art, Illustration & Digital Prints"
+    folder: "site/art-il-print"
+    create: true
+    identifier_field: "name"
+    extension: "md"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Tags"
+        widget: "hidden"
+        name: "tags"
+        default: "art_il_print"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Layout"
+        widget: "hidden"
+        name: "layout"
+        default: "single-art-il-print.html"
+      - label: "Seo"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+          - label: "Open Graph Image"
+            name: "og:image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Twitter Card"
+            name: "twitter:card"
+            widget: "string"
+            default: "summary"
+            required: false
+          - label: "Twitter Site"
+            name: "twitter:site"
+            widget: "string"
+            required: false
+          - label: "Twitter Creator"
+            name: "twitter:creator"
+            widget: "string"
+            required: false
+          - label: "Additional HTML tags"
+            name: "additional_tags"
+            widget: "text"
+            required: false
+      - widget: "object"
+        name: "featured-image-thumbnail"
+        label: "Featured Image/ Thumbnail"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "description"
+        label: "Description"
+        widget: "text"
+        required: false
+      - name: "website"
+        label: "Website (URL)"
+        widget: "string"
+        required: false
+      - name: "instagram"
+        label: "Instagram (URL)"
+        widget: "string"
+        required: false
+      - name: "email"
+        label: "Email (Email)"
+        widget: "string"
+        required: false
+      - widget: "list"
+        name: "gallery"
+        label: "Gallery"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "featured"
+        label: "Featured?"
+        widget: "boolean"
+        required: false
+      - name: "name"
+        label: "Name"
+        widget: "string"
+        required: true
+      - name: "created-on"
+        label: "Created On"
+        widget: "datetime"
+        required: false
+      - name: "updated-on"
+        label: "Updated On"
+        widget: "datetime"
+        required: false
+      - name: "published-on"
+        label: "Published On"
+        widget: "datetime"
+        required: false
+  - name: "jewellery"
+    label: "Jewelleries"
+    folder: "site/jewellery"
+    create: true
+    identifier_field: "name"
+    extension: "md"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Tags"
+        widget: "hidden"
+        name: "tags"
+        default: "jewellery"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Layout"
+        widget: "hidden"
+        name: "layout"
+        default: "single-jewellery.html"
+      - label: "Seo"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+          - label: "Open Graph Image"
+            name: "og:image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Twitter Card"
+            name: "twitter:card"
+            widget: "string"
+            default: "summary"
+            required: false
+          - label: "Twitter Site"
+            name: "twitter:site"
+            widget: "string"
+            required: false
+          - label: "Twitter Creator"
+            name: "twitter:creator"
+            widget: "string"
+            required: false
+          - label: "Additional HTML tags"
+            name: "additional_tags"
+            widget: "text"
+            required: false
+      - name: "description-2"
+        label: "Description"
+        widget: "string"
+        required: false
+      - widget: "select"
+        name: "category"
+        label: "Category"
+        options:
+          - label: "Art, Illustration & Digital Print"
+            value: "Art, Illustration & Digital Print"
+          - label: "Jewellery "
+            value: "Jewellery "
+          - label: "Home & Lifestyle"
+            value: "Home & Lifestyle"
+          - label: "Eat & Drink"
+            value: "Eat & Drink"
+          - label: "Ceramics"
+            value: "Ceramics"
+          - label: "Clothing & Textiles"
+            value: "Clothing & Textiles"
+          - label: "Shops, Studios & Services"
+            value: "Shops, Studios & Services"
+          - label: "Flowers & Plants"
+            value: "Flowers & Plants"
+          - label: "Body & Mind"
+            value: "Body & Mind"
+      - name: "website"
+        label: "Website (URL)"
+        widget: "string"
+        required: false
+      - name: "email"
+        label: "Email (Email)"
+        widget: "string"
+        required: false
+      - name: "instagram"
+        label: "Instagram (Email)"
+        widget: "string"
+        required: false
+      - widget: "list"
+        name: "showcase"
+        label: "Showcase"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "name"
+        label: "Name"
+        widget: "string"
+        required: true
+      - name: "created-on"
+        label: "Created On"
+        widget: "datetime"
+        required: false
+      - name: "updated-on"
+        label: "Updated On"
+        widget: "datetime"
+        required: false
+      - name: "published-on"
+        label: "Published On"
+        widget: "datetime"
+        required: false

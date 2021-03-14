@@ -1,0 +1,19 @@
+stackbitVersion: "~0.3.0"
+ssgName: "custom"
+buildCommand: "npx @11ty/eleventy"
+publishDir: "public"
+staticDir: "static"
+uploadDir: "images"
+pagesDir: "site"
+metadata:
+  title: "curateglasgow "
+  description: "Theme created in Webflow and converted with Udesly"
+models:
+  art_il_print:
+    type: "page"
+    label: "Art, Illustration & Digital Prints"
+    urlPath: "/art-il-print/{slug}"
+  jewellery:
+    type: "page"
+    label: "Jewelleries"
+    urlPath: "/jewellery/{slug}"
